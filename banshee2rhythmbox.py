@@ -3,6 +3,8 @@
 """
 Copyright (c) 2009 Wolfgang Steitz
 Additional adaptations by Karl Voit
+https://askubuntu.com/a/127199
+https://karl-voit.at/2020/05/08/Migration-Bashee-to-Rhythmbox/
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -34,8 +36,8 @@ class banshee_db():
         try:
             res = self.con.execute(
                 'select Rating, Playcount, DateAddedStamp, LastPlayedStamp, Comment from CoreTracks where uri = ?',
-                (url,) ).fetchone()
-            if res is None:
+                (url,) ).fetchone() # https://docs.python.org/3/library/sqlite3.html#sqlite3-placeholders
+            if res is None:         # the tuple is sqlite3 weirdness. see doc above   
                 return None, None, None, None, None
             else:
                 return res
