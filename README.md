@@ -1,8 +1,8 @@
-# Migration of Banshee music database to Rhythmbox
+# Migration of Banshee's music database to Rhythmbox
 
 (Instructions and script taken from [here](https://karl-voit.at/2020/05/08/Migration-Bashee-to-Rhythmbox/))
 
-1. Locate Banshee database which is usually at: ``~/.config/banshee-1/banshee.db`
+1. Locate Banshee's database which is usually at: ``~/.config/banshee-1/banshee.db`
 2. It is crucial that you don't move or rename mp3 files after you stopped using Banshee and before you migrated to Rhythmbox. This is because the absolute file path is used to match meta-data between the two databases.
 3. Start Rhythmbox.
 4. Change its music library root to the mp3 library sub-hierarchy.
