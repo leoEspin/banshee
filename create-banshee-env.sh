@@ -8,4 +8,7 @@
 
 conda env create -f env.yaml
 # add new env. as a jupyter kernel
+eval "$(conda shell.bash hook)"
+conda activate banshee
 python -m ipykernel install --user --name=banshee
+conda deactivate banshee
